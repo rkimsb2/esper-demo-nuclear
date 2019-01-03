@@ -2,14 +2,16 @@ package com.cor.cep;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 
 import com.cor.cep.util.RandomTemperatureEventGenerator;
 
 /**
  * Entry point for the Demo. Run this from your IDE, or from the command line using 'mvn exec:java'.
  */
+@SpringBootApplication
 public class StartDemo {
 
     /** Logger */
@@ -32,11 +34,10 @@ public class StartDemo {
         }
 
         // Load spring config
-        ClassPathXmlApplicationContext appContext = new ClassPathXmlApplicationContext(new String[] { "application-context.xml" });
-        BeanFactory factory = (BeanFactory) appContext;
-
+        ConfigurableApplicationContext applicationContext = SpringApplication.run(StartDemo.class, args);
+        
         // Start Demo
-        RandomTemperatureEventGenerator generator = (RandomTemperatureEventGenerator) factory.getBean("eventGenerator");
+        RandomTemperatureEventGenerator generator = (RandomTemperatureEventGenerator) applicationContext.getBean("eventGenerator");
         generator.startSendingTemperatureReadings(noOfTemperatureEvents);
 
     }

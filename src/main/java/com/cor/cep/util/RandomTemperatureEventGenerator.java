@@ -8,17 +8,14 @@ import java.util.concurrent.Executors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import com.cor.cep.event.TemperatureEvent;
-
 import com.cor.cep.handler.TemperatureEventHandler;
 
 /**
  * Just a simple class to create a number of Random TemperatureEvents and pass them off to the
  * TemperatureEventHandler.
  */
-@Component
 public class RandomTemperatureEventGenerator {
 
     /** Logger */
