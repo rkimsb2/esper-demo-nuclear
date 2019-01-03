@@ -11,5 +11,7 @@ public interface StatementSubscriber {
      * @return EPL Statement
      */
     public String getStatement();
+    
+    public String getStatementName();
 
 }

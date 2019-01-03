@@ -23,6 +23,11 @@ public class MonitorEventSubscriber implements StatementSubscriber {
         // Example of simple EPL with a Time Window
         return "select avg(temperature) as avg_val from TemperatureEvent.win:time_batch(5 sec)";
     }
+    
+    @Override
+	public String getStatementName() {
+		return "monitor-event";
+	}
 
     /**
      * Listener method called when Esper has detected a pattern match.

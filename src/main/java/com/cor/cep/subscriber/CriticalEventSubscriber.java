@@ -45,6 +45,11 @@ public class CriticalEventSubscriber implements StatementSubscriber {
         return crtiticalEventExpression;
     }
     
+    @Override
+	public String getStatementName() {
+		return "critical-event";
+	}
+    
     /**
      * Listener method called when Esper has detected a pattern match.
      */

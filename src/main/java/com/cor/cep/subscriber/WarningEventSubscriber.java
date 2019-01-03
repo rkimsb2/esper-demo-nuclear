@@ -38,6 +38,11 @@ public class WarningEventSubscriber implements StatementSubscriber {
         return warningEventExpression;
     }
     
+    @Override
+	public String getStatementName() {
+		return "warning-event";
+	}
+    
     /**
      * Listener method called when Esper has detected a pattern match.
      */

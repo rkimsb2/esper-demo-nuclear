@@ -15,7 +15,7 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<esper-version>7.1.0</esper-version>
+		<esper.version>8.0.0</esper.version>
 	</properties>
 
 	<dependencies>
@@ -26,8 +26,18 @@
 	
 		<dependency>
 			<groupId>com.espertech</groupId>
-			<artifactId>esper</artifactId>
-			<version>${esper-version}</version>
+			<artifactId>esper-common</artifactId>
+			<version>${esper.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.espertech</groupId>
+			<artifactId>esper-compiler</artifactId>
+			<version>${esper.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.espertech</groupId>
+			<artifactId>esper-runtime</artifactId>
+			<version>${esper.version}</version>
 		</dependency>
 
 		<dependency>
